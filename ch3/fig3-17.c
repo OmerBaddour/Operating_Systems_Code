@@ -24,9 +24,6 @@ int main()
 	/* pointer to shared memory obect */
 	void *ptr;
 
-	/* time for setup */
-	sleep(1);
-
 	/* create the shared memory object */
 	shm_fd = shm_open(name, O_CREAT | O_RDWR, 0666);
 
@@ -41,6 +38,9 @@ int main()
 	ptr += strlen(message_0);
 	sprintf(ptr,"%s", message_1);
 	ptr += strlen(message_1);
+
+	/* time for running fig3-18 */
+	sleep(10);
 
 	return 0;
 
