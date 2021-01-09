@@ -2,8 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <fcntl.h>
-#include <sys/shm.h>
+//#include <sys/shm.h>
 #include <sys/stat.h>
+#include <sys/mman.h>
+#include <unistd.h>
 int main()
 {
 	/* the size (in bytes) of shared memory object */
@@ -13,14 +15,17 @@ int main()
 	const char *name = "OS";
 
 	/* strings written to shared memory */
-	const char *message_0 = "Hello";
-	const char *message_1 = "World!";
+	const char *message_0 = "Hello ";
+	const char *message_1 = "World!\n";
 
 	/* shared memory file descriptor */
 	int shm_fd;
 
 	/* pointer to shared memory obect */
 	void *ptr;
+
+	/* time for setup */
+	sleep(1);
 
 	/* create the shared memory object */
 	shm_fd = shm_open(name, O_CREAT | O_RDWR, 0666);

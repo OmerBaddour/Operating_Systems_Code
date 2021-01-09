@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
-#include <sys/shm.h>
+//#include <sys/shm.h>
 #include <sys/stat.h>
+#include <sys/mman.h>
 int main()
 {
 	/* the size (in bytes) of shared memory object */
