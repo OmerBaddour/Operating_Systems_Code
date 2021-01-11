@@ -1,9 +1,29 @@
-fig3-17 : fig3-17.c
-	gcc fig3-17.c -Wall -o fig3-17 -lrt
+shm-posix-producer : shm-posix-producer.c
+	gcc shm-posix-producer.c -Wall -o shm-posix-producer -lrt
 
-fig3-18 : fig3-18.c
-	gcc fig3-18.c -Wall -o fig3-18 -lrt
+shm-posix-consumer : shm-posix-consumer.c
+	gcc shm-posix-consumer.c -Wall -o shm-posix-consumer -lrt
+
+unix_pipe : unix_pipe.c
+	gcc unix_pipe.c -Wall -o unix_pipe
+
+fig3-30 : fig3-30.c
+	gcc fig3-30.c -Wall -o fig3-30
+
+fig3-32 : fig3-32.c
+	gcc fig3-32.c -Wall -o fig3-32
+
+fig3-33 : fig3-33.c
+	gcc fig3-33.c -Wall -o fig3-33
+
+fig3-34 : fig3-34.c
+	gcc fig3-34.c -Wall -o fig3-34
+
+fig3-35 : fig3-35.c
+	gcc fig3-35.c -Wall -o fig3-35
 
 .PHONY: clean
 clean:
-	rm fig3-17 fig3-18 
+	rm shm-posix-producer shm-posix-consumer
+	rm unix_pipe
+	rm fig3-30 fig3-32 fig3-33 fig3-34 fig3-35 

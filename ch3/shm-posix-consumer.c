@@ -28,7 +28,6 @@ int main()
 
 	int shm_fd;
 	void *ptr;
-	int i;
 
 	/* open the shared memory segment */
 	shm_fd = shm_open(name, O_RDONLY, 0666);

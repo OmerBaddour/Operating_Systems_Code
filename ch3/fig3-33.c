@@ -24,7 +24,7 @@ pid_t pid;
 	else { /* parent process */
 		/* parent will wait for the child to complete */
 		wait(NULL);
-		printf("Child Complete");
+		printf("Child Complete\n");
 	}
 
 	return 0;

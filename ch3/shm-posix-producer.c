@@ -30,7 +30,7 @@ int main()
 	const char *name = "OS";
 	const char *message0= "Studying ";
 	const char *message1= "Operating Systems ";
-	const char *message2= "Is Fun!";
+	const char *message2= "Is Fun!\n";
 
 	int shm_fd;
 	void *ptr;
@@ -59,6 +59,9 @@ int main()
 	ptr += strlen(message1);
 	sprintf(ptr,"%s",message2);
 	ptr += strlen(message2);
+
+	/* time for running shm-posix-consumer */
+	sleep(10);	
 
 	return 0;
 }
