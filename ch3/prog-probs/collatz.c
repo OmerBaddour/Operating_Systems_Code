@@ -40,12 +40,11 @@ int main (int argc, char *argv[]) {
 	}
 	else { /* child process */
 		while (z != 1) {
+			printf("%d, ", z);
 			if (z % 2 == 0) {
-				printf("%d, ", z);
 				z /= 2;
 			}
  			else {
-				printf("%d, ", z);
 				z = z * 3 + 1;
 			}
 		}
