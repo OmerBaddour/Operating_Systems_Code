@@ -67,3 +67,18 @@ Uses ordinary pipes to send a message, reverse the case of the message, and send
 the reversed case message back to the sender.
 
 $ make reverse_case
+
+--------------------------------------------------------------------------------
+
+filecopy.c: p3-27
+
+Parent process reads a file's contents into a buffer, writes the buffer's 
+contents into an ordinary pipe. Child process reads contents from ordinary pipe
+and writes contents to a new file.
+
+To make no assumptions about the file's size, I obtain this value before calling
+fork(), to allocate an adequately-sized buffer. Copies are accessible by both 
+the child and parent processes.
+
+$ make filecopy
+$ ./filecopy source.txt destination.txt
