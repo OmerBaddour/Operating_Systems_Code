@@ -32,3 +32,20 @@ shm_collatz.c: p3-22
 Same as collatz.c, except child process writes to shared memory instead of 
 stdout. Parent then reads shared memory contents and writes to stdout.
 
+--------------------------------------------------------------------------------
+
+QOTDServer.java and QOTDClient.java: p3-23
+
+Same as ../DateServer.java and ../DateClient.java, with changes to port and msg
+
+$ make QOTD
+
+--------------------------------------------------------------------------------
+
+HaikuServer.java and HaikuClient.java: p3-24
+
+Same as ../DateServer.java and ../DateClient.java, with changes to port and msg
+
+$ make Haiku
+
+
