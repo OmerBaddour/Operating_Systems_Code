@@ -25,3 +25,10 @@ conjecture. The sequence is printed to stdout.
 $ make collatz
 $ ./collatz <positive_integer>
 
+--------------------------------------------------------------------------------
+
+shm_collatz.c: p3-22
+
+Same as collatz.c, except child process writes to shared memory instead of 
+stdout. Parent then reads shared memory contents and writes to stdout.
+

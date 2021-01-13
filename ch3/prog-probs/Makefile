@@ -1,4 +1,4 @@
-all : zombie pid_requester collatz
+all : zombie pid_requester collatz shm_collatz
 
 zombie : zombie.c
 	gcc zombie.c -Wall -o zombie
@@ -15,6 +15,9 @@ pid_manager.o : pid_manager.c
 collatz : collatz.c
 	gcc collatz.c -Wall -o collatz
 
+shm_collatz : shm_collatz.c
+	gcc shm_collatz.c -Wall -o shm_collatz -lrt -lm
+
 .PHONY : clean
 clean :
-	rm zombie pid_requester collatz *.o
+	rm zombie pid_requester collatz shm_collatz *.o
