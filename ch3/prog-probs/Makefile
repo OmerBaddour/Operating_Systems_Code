@@ -1,4 +1,4 @@
-all : zombie pid_requester collatz shm_collatz QOTD Haiku
+all : zombie pid_requester collatz shm_collatz QOTD Haiku Echo
 
 zombie : zombie.c
 	gcc zombie.c -Wall -o zombie
@@ -18,7 +18,7 @@ collatz : collatz.c
 shm_collatz : shm_collatz.c
 	gcc shm_collatz.c -Wall -o shm_collatz -lrt -lm
 
-.PHONY : clean QOTD Haiku
+.PHONY : clean QOTD Haiku Echo
 clean :
 	rm zombie pid_requester collatz shm_collatz *.o *.class
 
@@ -29,3 +29,7 @@ QOTD :
 Haiku :
 	javac HaikuServer.java
 	javac HaikuClient.java
+
+Echo :
+	javac EchoServer.java
+	javac EchoClient.java

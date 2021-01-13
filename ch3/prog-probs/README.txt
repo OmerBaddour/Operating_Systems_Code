@@ -48,4 +48,13 @@ Same as ../DateServer.java and ../DateClient.java, with changes to port and msg
 
 $ make Haiku
 
+--------------------------------------------------------------------------------
 
+EchoServer.java and EchoClient.java: p3-24
+
+Echo client reads bytes from stdin and sends through the socket to Echo server.
+Echo server prints bytes and echoes bytes back to client, who also prints bytes.
+
+Feel like my client implementation is a little shitty...
+
+$ make Echo
