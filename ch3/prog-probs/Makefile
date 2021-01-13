@@ -1,4 +1,4 @@
-all : zombie pid_requester collatz shm_collatz QOTD Haiku Echo
+all : zombie pid_requester collatz shm_collatz QOTD Haiku Echo reverse_case
 
 zombie : zombie.c
 	gcc zombie.c -Wall -o zombie
@@ -18,9 +18,12 @@ collatz : collatz.c
 shm_collatz : shm_collatz.c
 	gcc shm_collatz.c -Wall -o shm_collatz -lrt -lm
 
+reverse_case : reverse_case.c
+	gcc reverse_case.c -Wall -o reverse_case
+
 .PHONY : clean QOTD Haiku Echo
 clean :
-	rm zombie pid_requester collatz shm_collatz *.o *.class
+	rm zombie pid_requester collatz shm_collatz reverse_case *.o *.class
 
 QOTD :
 	javac QOTDServer.java
