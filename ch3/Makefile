@@ -1,3 +1,5 @@
+shm : shm-posix-producer shm-posix-consumer
+
 shm-posix-producer : shm-posix-producer.c
 	gcc shm-posix-producer.c -Wall -o shm-posix-producer -lrt
 
@@ -22,8 +24,10 @@ fig3-34 : fig3-34.c
 fig3-35 : fig3-35.c
 	gcc fig3-35.c -Wall -o fig3-35
 
+simple-shell : simple-shell.c
+	gcc simple-shell.c -Wall -o simple-shell
+
 .PHONY: clean
 clean:
-	rm shm-posix-producer shm-posix-consumer
-	rm unix_pipe
-	rm fig3-30 fig3-32 fig3-33 fig3-34 fig3-35 
+	rm shm-posix-producer shm-posix-consumer unix_pipe fig3-30 fig3-32 \
+	   fig3-33 fig3-34 fig3-35 simple-shell
