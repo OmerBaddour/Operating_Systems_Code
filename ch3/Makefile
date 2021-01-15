@@ -24,10 +24,16 @@ fig3-34 : fig3-34.c
 fig3-35 : fig3-35.c
 	gcc fig3-35.c -Wall -o fig3-35
 
-simple-shell : simple-shell.c
-	gcc simple-shell.c -Wall -o simple-shell
+simple-shell : simple-shell.o list.o
+	gcc simple-shell.o list.o -o simple-shell
+
+simple-shell.o : simple-shell.c
+	gcc -c -Wall simple-shell.c
+
+list.o : list.c
+	gcc -c -Wall list.c
 
 .PHONY: clean
 clean:
 	rm shm-posix-producer shm-posix-consumer unix_pipe fig3-30 fig3-32 \
-	   fig3-33 fig3-34 fig3-35 simple-shell
+	   fig3-33 fig3-34 fig3-35 simple-shell *.o
