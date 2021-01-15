@@ -16,7 +16,7 @@
 #include <linux/list.h>
 #include <linux/slab.h>
 
-// declare and initiaze list_head birthday_list
+// declare and initialize list_head birthday_list
 static LIST_HEAD(birthday_list);
 
 struct birthday {
