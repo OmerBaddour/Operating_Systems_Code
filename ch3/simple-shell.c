@@ -21,6 +21,7 @@
 #include "list.h" /* circular doubly linked list implementation */
 
 #define MAX_LINE 80 /* 80 chars per line, per command */
+#define LEN_HIST 10 /* 10 commands printed with history command */
 
 int main(void)
 {
@@ -74,10 +75,10 @@ int main(void)
 			break; /* exit */
 		}
 		else if (cur_arg == 1 && strcmp(args[0], "history") == 0) {
-			/* iterate over last 10 nodes in history and write to stdout */
+			/* iterate over last LEN_HIST nodes in history and write to stdout */
 			int i = 0;
 			struct list_node *n = list_tail(history);
-			while (!list_end(n) && i < 10) {
+			while (!list_end(n) && i < LEN_HIST) {
 				printf("%d ", len_hist-i);
 				char **data = (char **)n->data;
 				for (int i = 0; i < MAX_LINE/2 + 1; i++) {
