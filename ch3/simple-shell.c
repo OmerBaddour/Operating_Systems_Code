@@ -17,6 +17,8 @@
 int main(void)
 {
 	char *args[MAX_LINE/2 + 1]; /* command line (of 80) has max of 40 arguments */
+
+	/* history is circular doubly-linked list */
 		
     	while (1) {   
 		/* prompt user */
