@@ -33,7 +33,14 @@ simple-shell.o : simple-shell.c
 list.o : list.c
 	gcc -c -Wall list.c
 
-.PHONY: clean
+obj-m += tasks.o
+tasks :
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+
+.PHONY: clean kclean
 clean:
 	rm shm-posix-producer shm-posix-consumer unix_pipe fig3-30 fig3-32 \
 	   fig3-33 fig3-34 fig3-35 simple-shell *.o
+
+kclean:
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
