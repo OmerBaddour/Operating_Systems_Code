@@ -41,6 +41,7 @@ $ make simple-shell
 tasks.c
 
 Kernel module which lists the name, state and PID of all tasks currently running.
+Does depth-first search starting with the init task.
 
 $ make tasks
 $ sudo insmod tasks.ko

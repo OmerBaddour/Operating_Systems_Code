@@ -11,19 +11,27 @@
 #include <linux/module.h>
 #include <linux/kernel.h>
 #include <linux/sched.h>
+#include <linux/list.h>
+
+/* recursive DFS */
+void dfs(struct task_struct *base_task) {
+
+	struct task_struct *task;
+	struct list_head *list;
+
+	printk(KERN_INFO "Task name: %s, state: %ld, PID: %ld\n", 
+	       base_task->comm, base_task->state, (long)base_task->pid);
+
+	list_for_each(list, &base_task->children) {
+		task = list_entry(list, struct task_struct, sibling);
+		dfs(task); /* call for all children */
+	}
+}
 
 /* This function is called when the module is loaded. */
 int tasks_init(void)
 {
-	struct task_struct *task;
-
-	printk(KERN_INFO "Loading Module\n");
-	
-	/* iterate over tasks */
-	for_each_process(task) {
-		printk(KERN_INFO "Task name: %s, state: %ld, PID: %ld\n", 
-		       task->comm, task->state, (long)task->pid);
-	}
+	dfs(&init_task);
 
 	return 0;
 }
@@ -31,7 +39,7 @@ int tasks_init(void)
 /* This function is called when the module is removed. */
 void tasks_exit(void) {
 	
-	printk(KERN_INFO "Removing Module\n");
+	printk(KERN_INFO "Removing Module tasks\n");
 }
 
 /* Macros for registering module entry and exit points. */
