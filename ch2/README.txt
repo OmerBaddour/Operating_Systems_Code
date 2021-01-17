@@ -1,7 +1,5 @@
 cp_posix:
 
-See page 96 of the textbook (118 of pdf)
-
 To compile, type $ make cp_posix
 
 MAC OS
