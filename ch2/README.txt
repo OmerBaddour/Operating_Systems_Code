@@ -1,6 +1,6 @@
 cp_posix:
 
-To compile, type $ make cp_posix
+To build, type $ make cp_posix
 
 MAC OS
 To trace system calls, first run the program $ ./cp_posix
@@ -22,7 +22,7 @@ Clean with $ make clean
 
 birthday:
 
-To compile, type $ make birthday
+To build, type $ make birthday
 
 To load kernel module, type $ sudo insmod birthday.ko
 See kernel buffer with $ dmesg
