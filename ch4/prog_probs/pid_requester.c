@@ -2,11 +2,15 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <omp.h>
+#include <time.h>
 #include "pid_manager.h"
 
 #define NUM_THREADS 100
 
 int main () {
+
+	/* init random number generator */
+	srand(time(NULL));
 	
 	printf("Allocating PIDs...\n");
 	allocate_map();
