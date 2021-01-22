@@ -1,4 +1,4 @@
-all : pid_requester
+all : pid_requester stats
 
 pid_requester : pid_requester.o pid_manager.o
 	gcc pid_requester.o pid_manager.o -o pid_requester -fopenmp 
@@ -9,6 +9,9 @@ pid_requester.o : pid_requester.c
 pid_manager.o : pid_manager.c
 	gcc -c -Wall pid_manager.c
 
+stats : stats.c
+	gcc stats.c -Wall -o stats -lpthread
+
 .PHONY : clean
 clean :
-	rm pid_requester *.o
+	rm pid_requester stats *.o
