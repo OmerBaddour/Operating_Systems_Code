@@ -11,7 +11,7 @@ int main () {
 	printf("Allocating PIDs...\n");
 	allocate_map();
 
-	# pragma omp parallel for
+	#pragma omp parallel for
 	for (int i = 0; i < NUM_THREADS; i++) {
 		int pid = allocate_pid();
 		printf("Got allocated PID %d\n", pid);
