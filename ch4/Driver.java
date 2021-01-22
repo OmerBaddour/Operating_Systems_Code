@@ -1,5 +1,5 @@
 /**
- * Summation program using exectuors/callable/futures
+ * Summation program using executors/callable/futures
  *
  * Figure 4.14
  *
