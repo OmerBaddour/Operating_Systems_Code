@@ -15,3 +15,11 @@ The command line arguments must be positive integers (done for simplicity).
 The program creates a new thread for each statistical property.
 
 $ make stats
+
+--------------------------------------------------------------------------------
+
+pi_mc_1.c
+
+Creates a thread that computes the value of pi using the Monte Carlo method.
+
+$ make pi_mc_1
