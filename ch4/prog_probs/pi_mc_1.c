@@ -35,8 +35,8 @@ void *monte_carlo () {
 		 * rand() returns an int whose range is [0, RAND_MAX]
 		 * note that the computation results in the desired [-1, 1] bounds
 		 * for x and y */
-		double x = ((double) rand() / (RAND_MAX / 2)) - 1;
-		double y = ((double) rand() / (RAND_MAX / 2)) - 1;
+		double x = (rand() / (RAND_MAX / 2.0)) - 1;
+		double y = (rand() / (RAND_MAX / 2.0)) - 1;
 		
 		if (sqrt(x * x + y * y) <= 1) {
 			/* point is in the circle since its distance from (0, 0)
