@@ -53,3 +53,12 @@ DateClient.java is identical to that in ch3/
 $ make Date
 In one shell session: $ java DateServer
 In another shell session: $ java DateClient
+
+--------------------------------------------------------------------------------
+
+fibonacci.c
+
+Prints first n Fibonacci numbers, where n is a command line argument.
+
+$ make fibonacci
+$ ./fibonacci n

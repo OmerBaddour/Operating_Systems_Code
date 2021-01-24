@@ -1,4 +1,4 @@
-all : pid_requester stats pi_mc_1 pi_mc_2 primes Date
+all : pid_requester stats pi_mc_1 pi_mc_2 primes Date fibonacci
 
 pid_requester : pid_requester.o pid_manager.o
 	gcc pid_requester.o pid_manager.o -o pid_requester -fopenmp 
@@ -21,9 +21,12 @@ pi_mc_2 : pi_mc_2.c
 primes : primes.c
 	gcc primes.c -Wall -o primes -lpthread -lm
 
+fibonacci : fibonacci.c
+	gcc fibonacci.c -Wall -o fibonacci -lpthread -lm
+
 .PHONY : clean Date
 clean :
-	rm pid_requester stats pi_mc_1 pi_mc_2 primes *.o *.class
+	rm pid_requester stats pi_mc_1 pi_mc_2 primes fibonacci *.o *.class
 
 Date :
 	javac DateServer.java
