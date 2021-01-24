@@ -32,3 +32,14 @@ Creates many threads to compute the value of pi using the Monte Carlo method.
 Each thread is responsible for the creation of one point.
 
 $ make pi_mc_2
+
+--------------------------------------------------------------------------------
+
+primes.c
+
+Prints all primes less than or equal to the enterred command line argument using
+the Sieve of Eratosthenes.
+
+$ make primes
+$ ./primes n
+
