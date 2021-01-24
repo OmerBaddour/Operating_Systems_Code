@@ -43,3 +43,13 @@ the Sieve of Eratosthenes.
 $ make primes
 $ ./primes n
 
+--------------------------------------------------------------------------------
+
+DateServer.java and DateClient.java
+
+DateServer.java is multithreaded.
+DateClient.java is identical to that in ch3/
+
+$ make Date
+In one shell session: $ java DateServer
+In another shell session: $ java DateClient
