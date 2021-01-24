@@ -23,3 +23,12 @@ pi_mc_1.c
 Creates a thread that computes the value of pi using the Monte Carlo method.
 
 $ make pi_mc_1
+
+--------------------------------------------------------------------------------
+
+pi_mc_2.c
+
+Creates many threads to compute the value of pi using the Monte Carlo method.
+Each thread is responsible for the creation of one point.
+
+$ make pi_mc_2
