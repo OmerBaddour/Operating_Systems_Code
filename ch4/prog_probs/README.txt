@@ -62,3 +62,17 @@ Prints first n Fibonacci numbers, where n is a command line argument.
 
 $ make fibonacci
 $ ./fibonacci n
+
+--------------------------------------------------------------------------------
+
+EchoServer.java and EchoClient.java
+
+EchoServer.java is multithreaded.
+EchoClient.java is identical to that in ch3/prog-probs/
+
+$ make Echo
+In one shell session: $ java EchoServer
+In another shell session: $ java EchoClient
+
+--------------------------------------------------------------------------------
+
