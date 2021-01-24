@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <pthread.h>
 #include <stdlib.h>
+#include <time.h>
 #include <math.h>
 
 #define NUM_POINTS 1000000
