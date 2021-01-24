@@ -12,7 +12,7 @@
 #include <string.h>
 
 char *nums; /* store bitmap representing primality of numbers */
-void *find_primes(void *upper_bound); /* thread function which to find primes */
+void *find_primes(void *upper_bound); /* thread function which find primes */
 
 int main(int argc, char *argv[]) {
 	
