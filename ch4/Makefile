@@ -6,11 +6,11 @@ pthread_ex : fig4-23.c
 thrd-posix : thrd-posix.c
 	gcc thrd-posix.c -lpthread -o thrd-posix
 
-openmp :
+openmp : openmp.c
 	gcc -fopenmp openmp.c -o openmp
 
-sudoku_validator :
-	gcc sudoku_validator.c -Wall -lpthread -o sudoku_validator
+sudoku_validator : sudoku_validator.c
+	gcc sudoku_validator.c -lpthread -o sudoku_validator
 
 .PHONY : clean Driver Sumtask ThreadPoolExample
 

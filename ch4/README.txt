@@ -44,8 +44,40 @@ file, result in successful execution of sudoku_validator. This is fine since
 the remaining contents are ignored.
 
 I create threads to check that each row, column and 3x3 square contain the set
-of integers from 1 to 9 inclusive. I used an open-source C set implementation
-to simplify this checking process (set.c and set.h).
+of integers from 1 to 9 inclusive. I used bitmaps to do this.
+
+My order of checking rows, columns and 3x3 squares is top to bottom, and left
+to right. Thus for the 3x3 squares, I traverse them in the following order:
+
+				-------------
+				|   |   |   |
+				| 0 | 1 | 2 |
+				|   |   |   |
+				-------------
+				|   |   |   |
+				| 3 | 4 | 5 |
+				|   |   |   |
+				-------------
+				|   |   |   |
+				| 6 | 7 | 8 |
+				|   |   |   |
+				-------------
+
+Note that this is also the ordering I traverse the individual cells within each
+3x3 square too.
+
+To map square number [0, 8] to entries in puzzle_state ([0, 8]), ([0, 8]), I 
+compute:
+	(square/3)*3, to get the top row of the desired cells, and
+	(square%3)*3, to get the left column of the desired cells.
+
+Note that this takes advantage of integer division.
+
+From here, traverse the remaining cells entails adding the
+	iterator/3, to the top row of the desired cells, and the
+	iterator%3, to the left column of the desired cells.
+
+Note the symmetry from the square to puzzle_state mapping.
 
 --------------------------------------------------------------------------------
 

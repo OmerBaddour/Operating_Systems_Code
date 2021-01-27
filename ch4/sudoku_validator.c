@@ -67,10 +67,6 @@ int main(int argc, char *argv[]) {
 		puzzle_state[i] = row;
 	}
 
-	/* free resources */
-	free(line);
-	fclose(f_puzzle);
-
 	/* print puzzle_state */
 	/*
 	for (int i = 0; i < 9; i++) {
@@ -86,18 +82,19 @@ int main(int argc, char *argv[]) {
 	pthread_attr_init(&attr);
 
 	/* create the threads */
-	int tmp;
+	int thread_args[9];
+	for (int i = 0; i < 9; i++) {
+		thread_args[i] = i;
+	}
 	for (int thread = 0; thread < 27; thread++) {
 		if (thread < 9) { /* check rows */
-			pthread_create(&tids[thread], &attr, check_row, (void *) (&thread));
+			pthread_create(&tids[thread], &attr, check_row, (void *) (&thread_args[thread]));
 		}
 		else if (thread < 18) { /* check columns */
-			tmp = thread % 9;
-			pthread_create(&tids[thread], &attr, check_col, (void *) (&tmp));
+			pthread_create(&tids[thread], &attr, check_col, (void *) (&thread_args[thread % 9]));
 		}
 		else { /* check 3x3 squares */
-			tmp = thread % 9;
-			pthread_create(&tids[thread], &attr, check_square, (void *) (&tmp));
+			pthread_create(&tids[thread], &attr, check_square, (void *) (&thread_args[thread % 9]));
 		}
 	}
 
@@ -107,23 +104,32 @@ int main(int argc, char *argv[]) {
 	}
 
 	/* write result to stdout */
+	char valid = 1;
 	for (int result = 0; result < 27; result++) {
 		if (result < 9 && row_status[result] == 0) { /* check rows */
 			printf("Invalid Sudoku. Bad row %d\n", result);
+			valid = 0;
 		}
 		else if (result < 18 && col_status[result % 9] == 0) { /* check columns */
-			printf("Invalid Sudoku. Bad column %d\n", result);	
+			printf("Invalid Sudoku. Bad column %d\n", result % 9);	
+			valid = 0;
 		}
-		else { /* check 3x3 squares */
-			printf("Invalid Sudoku. Bad 3x3 square %d\n", result);	
+		else if (square_status[result % 9] == 0) { /* check 3x3 squares */
+			printf("Invalid Sudoku. Bad 3x3 square %d\n", result % 9);	
+			valid = 0;
 		}
 	}
-	printf("Valid Sudoku!\n");
-	
+	if (valid == 1) {
+		printf("Valid Sudoku!\n");
+	}
+
 	/* free heap memory used to store the puzzle state */
 	for (int i = 0; i < 9; i++) {
 		free(puzzle_state[i]);
 	}
+	/* free resources */
+	free(line);
+	fclose(f_puzzle);
 
 	return 0;
 }
@@ -135,6 +141,26 @@ void *check_row(void *row_to_check) {
 
 	int row = *((int *) row_to_check);
 
+	/* create bitmap resembling counts of each integer */
+	char count[9];
+	for (int i = 0; i < 9; i++) {
+		count[i] = 0;
+	} 
+
+	/* iterate over row, adjusting counts appropriately */
+	for (int i = 0; i < 9; i++) {
+		count[puzzle_state[row][i]-1]++;
+	}
+
+	/* check that each count equals 1 */
+	for (int i = 0; i < 9; i++) {
+		if (count[i] != 1) {
+			row_status[row] = 0;
+			pthread_exit(0);
+		}
+	} 
+
+	row_status[row] = 1;
 	pthread_exit(0);
 }
  
@@ -142,6 +168,26 @@ void *check_col(void *col_to_check) {
 
 	int col = *((int *) col_to_check);
 
+	/* create bitmap resembling counts of each integer */
+	char count[9];
+	for (int i = 0; i < 9; i++) {
+		count[i] = 0;
+	} 
+
+	/* iterate over column, adjusting counts appropriately */
+	for (int i = 0; i < 9; i++) {
+		count[puzzle_state[i][col]-1]++;
+	}
+
+	/* check that each count equals 1 */
+	for (int i = 0; i < 9; i++) {
+		if (count[i] != 1) {
+			col_status[col] = 0;
+			pthread_exit(0);
+		}
+	} 
+
+	col_status[col] = 1;
 	pthread_exit(0);
 }
  
@@ -149,5 +195,32 @@ void *check_square(void *square_to_check) {
 
 	int square = *((int *) square_to_check);
 
+	/* create bitmap resembling counts of each integer */
+	char count[9];
+	for (int i = 0; i < 9; i++) {
+		count[i] = 0;
+	} 
+
+	/* iterate over square, adjusting counts appropriately 
+	 * note that to get the correct row, we must cover:
+	 * 	(square/3)*3 to (square/3)*3 + 2
+	 * note that to get the correct column, we must cover:
+	 * 	(square%3)*3 to (square%3)*3 + 2
+	 * see the README for a diagram */
+	int top_row = (square/3)*3;
+	int left_col = (square%3)*3;
+	for (int i = 0; i < 9; i++) {
+		count[puzzle_state[top_row + i/3][left_col + i%3]-1]++;
+	}
+
+	/* check that each count equals 1 */
+	for (int i = 0; i < 9; i++) {
+		if (count[i] != 1) {
+			square_status[square] = 0;
+			pthread_exit(0);
+		}
+	} 
+
+	square_status[square] = 1;
 	pthread_exit(0);
 }
