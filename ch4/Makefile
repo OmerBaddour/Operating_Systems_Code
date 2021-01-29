@@ -1,4 +1,4 @@
-all : pthread_ex thrd-posix openmp sudoku_validator 
+all : pthread_ex thrd-posix openmp sudoku_validator sort 
 
 pthread_ex : fig4-23.c
 	gcc fig4-23.c -lpthread -o pthread_ex
@@ -10,12 +10,15 @@ openmp : openmp.c
 	gcc -fopenmp openmp.c -o openmp
 
 sudoku_validator : sudoku_validator.c
-	gcc sudoku_validator.c -lpthread -o sudoku_validator
+	gcc sudoku_validator.c -Wall -lpthread -o sudoku_validator
+
+sort : sort.c
+	gcc sort.c -Wall -lpthread -o sort
 
 .PHONY : clean Driver Sumtask ThreadPoolExample
 
 clean :
-	rm pthread_ex thrd-posix openmp sudoku_validator
+	rm pthread_ex thrd-posix openmp sudoku_validator sort
 
 Driver :
 	javac Driver.java

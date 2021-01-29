@@ -81,5 +81,20 @@ Note the symmetry from the square to puzzle_state mapping.
 
 --------------------------------------------------------------------------------
 
+sort.c
+
+Multithreaded sorting program.
+
+$ make sort
+$ ./sort a b ... z
+
+Where a b ... z is an arbitrary length space-delimited list of positive integers.
+
+Uses an open source merge sort implementation (source at top of program). Splits
+the input array in half, and makes two threads that sort each half. Then, the
+contents of the sorted arrays are merged.
+
+--------------------------------------------------------------------------------
+
 The other programs do not correspond to my version of the textbook.
 
