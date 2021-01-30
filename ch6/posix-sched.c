@@ -1,15 +1,15 @@
 /**
  * A simple pthread program illustrating POSIX scheduling.
  *
- * Figure 5.10
+ * Figure 6.8
  *
  * To compile:
  *
  *	gcc posix-sched.c -o posix-sched -lpthread
  *
  * @author Gagne, Galvin, Silberschatz
- * Operating System Concepts  - Tenth Edition
- * Copyright John Wiley & Sons - 2018.
+ * Operating System Concepts  - Ninth Edition
+ * Copyright John Wiley & Sons - 2013.
  */
 
 #include <pthread.h>
@@ -19,7 +19,7 @@
 /* the thread runs in this function */
 void *runner(void *param); 
 
-int main(int argc, char *argv[])
+main(int argc, char *argv[])
 {
 	int i, scope;
 	pthread_t tid[NUM_THREADS]; 	/* the thread identifier */

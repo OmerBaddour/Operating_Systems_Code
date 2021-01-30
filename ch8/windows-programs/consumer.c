@@ -3,11 +3,11 @@
  *
  * Consumer code.
  *
- * Figure 13.16
+ * Figure 8.25
  *
  * @author Gagne, Galvin, Silberschatz
- * Operating System Concepts  - Tenth Edition
- * Copyright John Wiley & Sons - 2018.
+ * Operating System Concepts  - Ninth Edition
+ * Copyright John Wiley & Sons - 2013.
  */
 
 #include <stdio.h>

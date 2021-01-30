@@ -3,11 +3,11 @@
  *
  * Producer code.
  *
- * Figure 13.15
+ * Figure 8.24
  *
  * @author Gagne, Galvin, Silberschatz
- * Operating System Concepts  - Tenth Edition
- * Copyright John Wiley & Sons - 2018.
+ * Operating System Concepts  - Ninth Edition
+ * Copyright John Wiley & Sons - 2013.
  */
 
 #include <windows.h>

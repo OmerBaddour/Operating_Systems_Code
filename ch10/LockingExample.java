@@ -6,11 +6,11 @@
  * Usage
  *	java LockingExample <input file>
  *
- * Figure 13.2
+ * Figure 10.2
  *
  * @author Gagne, Galvin, Silberschatz
- * Operating System Concepts - Tenth Edition
- * Copyright John Wiley & Sons - 2018.
+ * Operating System Concepts - Ninth Edition
+ * Copyright John Wiley & Sons - 2013.
  */
 
 import java.io.*;
