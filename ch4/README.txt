@@ -94,7 +94,3 @@ Uses an open source merge sort implementation (source at top of program). Splits
 the input array in half, and makes two threads that sort each half. Then, the
 contents of the sorted arrays are merged.
 
---------------------------------------------------------------------------------
-
-The other programs do not correspond to my version of the textbook.
-
