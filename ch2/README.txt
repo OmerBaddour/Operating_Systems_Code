@@ -1,4 +1,4 @@
-cp_posix:
+cp_posix.c:
 
 To build, type $ make cp_posix
 
@@ -20,7 +20,7 @@ Clean with $ make clean
 
 -------------------------------------------------------------------------------
 
-birthday:
+birthday.c:
 
 To build, type $ make birthday
 
