@@ -28,7 +28,7 @@ int main(void)
 {
 sem_t sem;
 
-    if (sem_init(&sem,0,1) == -1)
+	if (sem_init(&sem,0,1) == -1)
               printf("%s\n",strerror(errno));
 
 	if (sem_wait(&sem) != 0)
