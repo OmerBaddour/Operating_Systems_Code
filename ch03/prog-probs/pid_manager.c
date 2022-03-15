@@ -28,7 +28,7 @@ int allocate_pid(void) {
 		}
 	}
 
-	return 1;
+	return -1;
 }
 
 void release_pid(int pid) {
