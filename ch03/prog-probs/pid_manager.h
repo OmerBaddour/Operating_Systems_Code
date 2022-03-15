@@ -1,6 +1,6 @@
 #define MIN_PID 300
 #define MAX_PID 5000
-#define LEN_PIDS MAX_PID - MIN_PID
+#define LEN_PIDS MAX_PID - MIN_PID + 1
 
 /* create and initialize structure representing PIDs
  * returns 1 if successful, -1 if unsuccessful */ 
