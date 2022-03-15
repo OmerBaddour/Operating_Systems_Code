@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
 	pthread_attr_t attr; /* set of attributes for each thread */
 
 	if (argc != 2) {
-		fprintf(stderr, "usage: ./sudoku_validator <filepath_to_puzzle_state>");
+		fprintf(stderr, "usage: ./sudoku_validator <filepath_to_puzzle_state>\n");
 		exit(1);
 	}
 
