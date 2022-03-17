@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include "pid_manager.h"
 
-#define NUM_THREADS 3
+#define NUM_THREADS 100
 #define NUM_PROCESSES_PER_THREAD 3
 
 /* shared mutex by threads */
