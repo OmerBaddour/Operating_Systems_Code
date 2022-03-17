@@ -1,5 +1,5 @@
 #define MIN_PID 300
-#define MAX_PID 5000 
+#define MAX_PID 301 
 
 // inclusive of bounds
 #define LEN_PIDS MAX_PID - MIN_PID + 1

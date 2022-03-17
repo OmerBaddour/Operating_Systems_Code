@@ -33,7 +33,7 @@ int allocate_pid(void) {
 
 void release_pid(int pid) {
 	if (pid < MIN_PID || pid > MAX_PID) {
-		fprintf(stderr, "Invalid PID to release");
+		fprintf(stderr, "Invalid PID to release\n");
 	}
 	else {
 		pids[pid - MIN_PID] = 0;
