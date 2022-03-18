@@ -45,4 +45,6 @@ int main () {
 		}
 	}
 
+	free_sem();
+
 }
