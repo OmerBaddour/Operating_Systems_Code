@@ -8,7 +8,7 @@
 #define NUM_THREADS 3
 #define NUM_ITERATIONS 3
 
-int main () {
+int main (void) {
 
 	/* init random number generator */
 	srand(time(NULL));
@@ -46,5 +46,7 @@ int main () {
 	}
 
 	free_sem();
+
+	return 0;
 
 }
