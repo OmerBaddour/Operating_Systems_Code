@@ -57,3 +57,7 @@ int increase_count(int count) {
 	return 0;
 }
 
+void free_sem(void) {
+	/* destroy semaphore */
+	sem_destroy(&sem);
+}

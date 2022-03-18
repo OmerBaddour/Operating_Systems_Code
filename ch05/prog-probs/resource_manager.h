@@ -11,3 +11,6 @@ int decrease_count(int);
 /* increase the number of resources */
 int increase_count(int);
 
+/* clean up semaphore */
+void free_sem(void);
+
