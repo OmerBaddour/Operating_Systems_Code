@@ -22,7 +22,7 @@ int main (void) {
 		for (int j = 0; j < NUM_ITERATIONS; j++) {
 
 			/* try to fetch a random number of resources */
-			int resources_to_fetch = (rand() % (MAX_RESOURCES-1)) + 1;
+			int resources_to_fetch = (rand() % MAX_RESOURCES) + 1;
 			int success = decrease_count(resources_to_fetch);
 			if (success == 0) {
 				printf("Fetched %d resources\n", resources_to_fetch);
