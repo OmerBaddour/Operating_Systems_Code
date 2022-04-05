@@ -37,5 +37,15 @@ Requests resources from the resource manager, which is implemented as a monitor.
 I didn't feel the textbook did a great job of preparing the reader for this
 question. Here are some useful resources:
 
+- Simulating a monitor, and an explanation on the importance of static variables
+  - http://www.csl.mtu.edu/cs4411.ck/www/NOTES/threads/sim-mon.html
+- A code example with condition variables
+  - https://stackoverflow.com/questions/3827598/how-can-i-code-a-monitor-in-c
+- Good holistic condition documentation
+  - https://www.ibm.com/docs/en/i/7.1?topic=ssw_ibm_i_71/apis/users_75.htm
+- A nice condition variable in Linux guide
+  - https://tuxthink.blogspot.com/2013/01/using-condition-variables-in-pthreads.html
+- A nice detailed conceptual explanation of condition variables
+  - https://stackoverflow.com/questions/47804723/how-exactly-does-the-wait-function-work-in-regards-to-condition-variables
 
 $ make resource_requester_monitor
