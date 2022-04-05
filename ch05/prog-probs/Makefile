@@ -27,7 +27,16 @@ resource_requester.o : resource_requester.c
 resource_manager.o : resource_manager.c
 	gcc -c -Wall resource_manager.c
 
+resource_requester_monitor : resource_requester_monitor.o resource_manager_monitor.o
+	gcc resource_requester_monitor.o resource_manager_monitor.o -o resource_requester_monitor -fopenmp -lpthread
+
+resource_requester_monitor.o : resource_requester_monitor.c
+	gcc -c -Wall resource_requester_monitor.c -fopenmp
+
+resource_manager_monitor.o : resource_manager_monitor.c
+	gcc -c -Wall resource_manager_monitor.c
+
 .PHONY : clean 
 clean :
-	rm pid_requester pid_requester_2 resource_requester *.o
+	rm pid_requester pid_requester_2 resource_requester resource_requester_monitor *.o
 
