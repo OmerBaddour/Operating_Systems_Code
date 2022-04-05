@@ -49,8 +49,8 @@ int increase_count(int count) {
 	available_resources += count;
 	printf("Recovered %d resources, %d remain\n", count, available_resources);
 
-	/* try to release blocked process */
-	pthread_cond_signal(&cond);
+	/* release all blocked process */
+	pthread_cond_broadcast(&cond);
 
 	/* release monitor lock */
 	pthread_mutex_unlock(&monitor_lock);
