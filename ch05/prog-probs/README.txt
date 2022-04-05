@@ -47,5 +47,7 @@ question. Here are some useful resources:
   - https://tuxthink.blogspot.com/2013/01/using-condition-variables-in-pthreads.html
 - A nice detailed conceptual explanation of condition variables
   - https://stackoverflow.com/questions/47804723/how-exactly-does-the-wait-function-work-in-regards-to-condition-variables
+- An amazing video explanation of condition variables with examples
+  - https://www.youtube.com/watch?v=rMpOfbaP2PQ&ab_channel=MythiliVutukuru
 
 $ make resource_requester_monitor
