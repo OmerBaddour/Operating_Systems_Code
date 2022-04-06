@@ -51,3 +51,12 @@ question. Here are some useful resources:
   - https://www.youtube.com/watch?v=rMpOfbaP2PQ&ab_channel=MythiliVutukuru
 
 $ make resource_requester_monitor
+
+-------------------------------------------------------------------------------
+
+pi_mc.c
+
+Multithreaded, Monte Carlo for pi.
+
+$ make pi_mc
+
