@@ -14,7 +14,7 @@
 #define NUM_THREADS 8
 
 int in_circle; /* store count of number of points in unit circle */
-pthread_mutex_t mutex; /* mutex to serialize access to in_circle, cur_num_points */
+pthread_mutex_t mutex; /* mutex to serialize access to in_circle */
 
 void *monte_carlo (); /* thread function which executes Monte Carlo */
 
