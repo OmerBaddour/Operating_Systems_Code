@@ -70,3 +70,11 @@ This is definitely the better way to do this problem.
 
 $ make pi_mc_2
 
+-------------------------------------------------------------------------------
+
+pi_mc_3.c
+
+Multithreaded, Monte Carlo for pi. Protects against a race condition using
+OpenMP.
+
+$ make pi_mc_3
