@@ -1,4 +1,4 @@
-all : pid_requester pid_requester_2 resource_requester resource_requester_monitor pi_mc pi_mc_2 pi_mc_3
+all : pid_requester pid_requester_2 resource_requester resource_requester_monitor pi_mc pi_mc_2 pi_mc_3 barrier_tester
 
 pid_requester : pid_requester.o pid_manager.o
 	gcc pid_requester.o pid_manager.o -o pid_requester -lpthread
@@ -45,7 +45,16 @@ pi_mc_2 : pi_mc_2.c
 pi_mc_3 : pi_mc_3.c
 	gcc pi_mc_3.c -Wall -o pi_mc_3 -fopenmp -lm
 
+barrier_tester : barrier_tester.o barrier.o
+	gcc barrier_tester.o barrier.o -Wall -o barrier_tester -lpthread
+
+barrier_tester.o : barrier_tester.c
+	gcc -c -Wall barrier_tester.c
+
+barrier.o : barrier.c
+	gcc -c -Wall barrier.c
+
 .PHONY : clean 
 clean :
-	rm pid_requester pid_requester_2 resource_requester resource_requester_monitor pi_mc pi_mc_2 pi_mc_3 *.o
+	rm pid_requester pid_requester_2 resource_requester resource_requester_monitor pi_mc pi_mc_2 pi_mc_3 barrier_tester *.o
 
