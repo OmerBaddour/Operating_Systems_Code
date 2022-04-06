@@ -1,4 +1,4 @@
-all : pid_requester pid_requester_2 resource_requester resource_requester_monitor pi_mc pi_mc_2
+all : pid_requester pid_requester_2 resource_requester resource_requester_monitor pi_mc pi_mc_2 pi_mc_3
 
 pid_requester : pid_requester.o pid_manager.o
 	gcc pid_requester.o pid_manager.o -o pid_requester -lpthread
@@ -42,7 +42,10 @@ pi_mc : pi_mc.c
 pi_mc_2 : pi_mc_2.c
 	gcc pi_mc_2.c -Wall -o pi_mc_2 -lpthread -lm
 
+pi_mc_3 : pi_mc_3.c
+	gcc pi_mc_3.c -Wall -o pi_mc_3 -fopenmp -lm
+
 .PHONY : clean 
 clean :
-	rm pid_requester pid_requester_2 resource_requester resource_requester_monitor pi_mc pi_mc_2 *.o
+	rm pid_requester pid_requester_2 resource_requester resource_requester_monitor pi_mc pi_mc_2 pi_mc_3 *.o
 
