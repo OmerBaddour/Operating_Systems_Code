@@ -78,3 +78,15 @@ Multithreaded, Monte Carlo for pi. Protects against a race condition using
 OpenMP.
 
 $ make pi_mc_3
+
+-------------------------------------------------------------------------------
+
+barrier_tester.c, barrier.c
+
+barrier_tester.c tests the barrier API defined in barrier.c. Unfortunately
+I lack the testing harness referenced in the textbook due to me using an
+inexact version of the machine. I made some minor adjustments to the API.
+All appears to be working fine.
+
+$ make barrier_tester
+
