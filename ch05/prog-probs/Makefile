@@ -1,4 +1,4 @@
-all : pid_requester pid_requester_2 resource_requester
+all : pid_requester pid_requester_2 resource_requester resource_requester_monitor
 
 pid_requester : pid_requester.o pid_manager.o
 	gcc pid_requester.o pid_manager.o -o pid_requester -lpthread
