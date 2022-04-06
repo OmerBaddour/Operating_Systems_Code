@@ -60,3 +60,13 @@ Multithreaded, Monte Carlo for pi.
 
 $ make pi_mc
 
+-------------------------------------------------------------------------------
+
+pi_mc_2.c
+
+Multithreaded, Monte Carlo for pi. Each thread conducts individual simulations.
+Afterwards, the threads combine their results in a race-condition-free way.
+This is definitely the better way to do this problem.
+
+$ make pi_mc_2
+
