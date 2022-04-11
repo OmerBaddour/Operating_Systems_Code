@@ -1,5 +1,3 @@
-#include <semaphore.h>
-
 #define MAX_RESOURCES 5
 
 /* initialize the semaphore */
