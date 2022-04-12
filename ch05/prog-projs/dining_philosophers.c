@@ -64,7 +64,7 @@ int main (void) {
 void *philosopher_func(void *philosopher_number) {
 
 	int id = *((int *) philosopher_number);
-	printf("%d\n", id);
+	printf("Spawned philosopher %d.\n", id);
 
 	while (true) {
 	
