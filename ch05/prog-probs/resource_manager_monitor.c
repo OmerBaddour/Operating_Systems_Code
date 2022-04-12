@@ -58,7 +58,7 @@ int increase_count(int count) {
 	return 0;
 }
 
-/* cleann up monitor resources */
+/* clean up monitor resources */
 void free_monitor(void) {
 	/* destroy condition variable */
 	pthread_cond_destroy(&cond);
