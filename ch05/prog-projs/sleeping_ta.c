@@ -167,7 +167,7 @@ void *student_func(void *tid) {
 /* probabilistically determine whether a student has completed the assignment */
 /* uses max() to set a lower bound of amount of work required */
 bool done_assignment(int time_worked, int times_helped, float intelligence) {
-	return max(MAX_ASSIGNMENT_TIME / 2, (rand() % MAX_ASSIGNMENT_TIME)) < ((time_worked + 10*times_helped) * intelligence);
+	return max(MAX_ASSIGNMENT_TIME / 2, (rand() % MAX_ASSIGNMENT_TIME) + 1) < ((time_worked + 10*times_helped) * intelligence);
 }
 
 int max(int x, int y) {
