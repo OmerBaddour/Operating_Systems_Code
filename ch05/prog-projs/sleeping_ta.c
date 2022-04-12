@@ -68,6 +68,11 @@ int main(void){
 
 	printf("All threads done.\n");
 
+	/* clean up resources */
+	pthread_mutex_destroy(&seat_mutex);
+	sem_destroy(&student_sem);
+	sem_destroy(&ta_sem);
+
 	return 0;
 }
 
