@@ -66,3 +66,17 @@ $ make dining_philosophers
 
 -------------------------------------------------------------------------------
 
+producer_consumer_main.c, producer_and_consumer.*, buffer.*
+
+This is also a famous synchronization problem worth Googling.
+
+Producing threads produce random integers and write them to a shared buffer.
+Consuming threads read the produced integers from the shared buffer.
+
+producer_consumer_main contains the main method.
+producer_and_consumer.* contains the thread functions.
+buffer.* defines how the buffer is written to and read from.
+
+$ make producer_consumer_main
+$ ./producer_consumer_main <total_runtime> <num_producer_threads> <num_consumer_threads>
+
