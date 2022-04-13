@@ -4,7 +4,7 @@ I taught myself about operating systems by studying "Operating System Concepts
 Essentials (Second Edition)", by Abraham Silberschatz, Peter Baer Galvin and
 Greg Gagne.
 
-My study will entail reading the entire textbook (am currently on Chapter 5),
+My study will entail reading the entire textbook (am currently on Chapter 6),
 and completing all of the programming problems and projects. This link
 contains the base source code for some of the problems and projects: 
 http://cs.westminstercollege.edu/~greg/osc/index.html
