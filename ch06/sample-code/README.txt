@@ -1,6 +1,6 @@
 posix-sched.c
 
-Illustrates using the POSIX API for thread scheduling mnaipulation.
+Illustrates using the POSIX API for thread scheduling manipulation.
 
 I found this to be a useful educational resource:
 - https://www.geeksforgeeks.org/thread-scheduling/
